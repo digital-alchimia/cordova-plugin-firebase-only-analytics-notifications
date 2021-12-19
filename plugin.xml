@@ -50,12 +50,12 @@
       </intent-filter>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <service android:name="org.apache.cordova.firebase.FirebasePluginMessagingService" android:stopWithTask="false">
+      <service android:exported="true" android:name="org.apache.cordova.firebase.FirebasePluginMessagingService" android:stopWithTask="false">
         <intent-filter>
           <action android:name="com.google.firebase.MESSAGING_EVENT"/>
         </intent-filter>
       </service>
-      <receiver android:name="org.apache.cordova.firebase.OnNotificationOpenReceiver"></receiver>
+      <receiver android:exported="true" android:name="org.apache.cordova.firebase.OnNotificationOpenReceiver"></receiver>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="@string/default_notification_channel_id"/>
